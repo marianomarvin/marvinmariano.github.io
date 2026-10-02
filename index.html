@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marvin Mariano — Acteur</title>
+<meta name="description" content="Site officiel de Marvin Mariano, acteur et poète de scène. Présentation, photos et contact.">
+<style>
+  :root{--bg:#f2f0eb;--ink:#1b2a41;--accent:#8e1b2b;--muted:#5b6574;--line:#d8d4ca}
+  @font-face{font-family:"Bebas Kai";font-display:swap;
+    src:url("fonts/BebasKai.woff2") format("woff2"),url("fonts/BebasKai.otf") format("opentype"),url("fonts/BebasKai.ttf") format("truetype")}
+  :root{--titres:"Bebas Kai","Bebas Neue",Impact,"Helvetica Neue",Helvetica,Arial,sans-serif}
+  @font-face{font-family:"HNWeb";font-weight:100;font-style:normal;font-display:swap;src:local("HelveticaNeue-Thin"),local("Helvetica Neue Thin"),url("fonts/HelveticaNeueThin.woff2") format("woff2"),url("fonts/HelveticaNeueThin.ttf") format("truetype"),url("fonts/HelveticaNeueThin.otf") format("opentype")}
+  @font-face{font-family:"HNWeb";font-weight:200;font-style:normal;font-display:swap;src:local("HelveticaNeue-UltraLight"),local("Helvetica Neue UltraLight"),url("fonts/HelveticaNeueUltraLight.woff2") format("woff2"),url("fonts/HelveticaNeueUltraLight.ttf") format("truetype"),url("fonts/HelveticaNeueUltraLight.otf") format("opentype")}
+  @font-face{font-family:"HNWeb";font-weight:500;font-style:normal;font-display:swap;src:local("HelveticaNeue-Medium"),local("Helvetica Neue Medium"),url("fonts/HelveticaNeueMedium.woff2") format("woff2"),url("fonts/HelveticaNeueMedium.ttf") format("truetype"),url("fonts/HelveticaNeueMedium.otf") format("opentype")}
+  @font-face{font-family:"HNWeb";font-weight:400;font-style:normal;font-display:swap;src:local("HelveticaNeue-Roman"),local("HelveticaNeue"),local("Helvetica Neue"),url("fonts/HelveticaNeueRoman.woff2") format("woff2"),url("fonts/HelveticaNeueRoman.ttf") format("truetype"),url("fonts/HelveticaNeueRoman.otf") format("opentype")}
+  @font-face{font-family:"HNWeb";font-weight:700;font-style:normal;font-display:swap;src:local("HelveticaNeue-Bold"),local("Helvetica Neue Bold"),url("fonts/HelveticaNeueBold.woff2") format("woff2"),url("fonts/HelveticaNeueBold.ttf") format("truetype"),url("fonts/HelveticaNeueBold.otf") format("opentype")}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.02em}
+  h1,h2{font-style:normal;font-family:var(--titres);font-weight:400;letter-spacing:.03em;line-height:1;margin:0}
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+  section{padding:4.5rem 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(2.4rem,5vw,3.4rem);margin-bottom:1.5rem}
+
+  /* En-tête : vidéo */
+  header{background:#000;color:#f2f0eb}
+  main,footer{--ink:#000;--accent:#000;--muted:#000;color:#000}
+  nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem 1.5rem;padding:1rem 1.25rem;max-width:1100px;margin:0 auto}
+  nav .name{font-style:normal;font-family:var(--titres);font-weight:400;letter-spacing:.04em;font-size:1.6rem}
+  nav a{display:inline-flex;flex-direction:column;align-items:center}
+  nav a::after{content:attr(data-t);font-weight:500;height:0;visibility:hidden;overflow:hidden;pointer-events:none}
+  nav a:hover,nav a:focus-visible{font-weight:500;text-decoration:none}
+  nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  nav a{color:inherit;text-decoration:none;font-family:"HNWeb","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:normal;font-weight:100}
+  .bar{position:sticky;top:0;z-index:50;background:#000;color:#f2f0eb}
+  nav{padding-top:.6rem;padding-bottom:.6rem}
+  @media(max-width:480px){nav{gap:.25rem 1rem}nav .name{font-size:1.3rem}nav ul{gap:.9rem;font-size:.95rem}}
+  .video{max-width:1100px;margin:0 auto;padding:0 1.25rem 2rem}
+  .video div{position:relative;aspect-ratio:16/9;background:#000}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* Présentation */
+  .about{display:grid;gap:2rem;grid-template-columns:1fr}
+  @media(min-width:760px){.about{grid-template-columns:5fr 7fr;align-items:start}}
+  .portrait{aspect-ratio:3/4;width:100%;object-fit:cover;background:var(--line)}
+  .facts{list-style:none;padding:0;margin:1.5rem 0;color:var(--muted)}
+  .facts li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+  em.t{font-family:"HNWeb","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:normal;font-weight:700}
+  .bio{font-family:"HNWeb","Helvetica Neue",Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:justify;hyphens:none;-webkit-hyphens:none}
+
+  /* Photos */
+  .grid{display:grid;gap:.5rem;grid-template-columns:repeat(3,1fr)}
+  .grid img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--line);display:block}
+
+  .grid img{cursor:zoom-in}
+  #lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.92)}
+  #lb.open{display:flex}
+  #lb img{max-width:92vw;max-height:86vh;object-fit:contain;cursor:default;aspect-ratio:auto;background:none}
+  .vid{position:relative}
+  .vid .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3.6rem;height:3.6rem;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;padding-left:.2rem;pointer-events:none}
+  #lb video{display:none;max-width:92vw;max-height:86vh;background:#000}
+  #lb button{position:absolute;background:none;border:0;color:#fff;font:400 2.4rem/1 "Helvetica Neue",Helvetica,Arial,sans-serif;padding:.75rem 1rem;cursor:pointer}
+  #lb .close{top:env(safe-area-inset-top,0px);right:0}
+  #lb .prev{left:0;top:50%;transform:translateY(-50%)}
+  #lb .next{right:0;top:50%;transform:translateY(-50%)}
+
+  /* Contact */
+  .contact p{margin:.25rem 0}
+  .contact p,footer{font-family:"HNWeb","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:200}
+  footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <nav aria-label="Navigation principale">
+    <span class="name">Marvin Mariano</span>
+    <ul>
+      <li><a href="#presentation" data-t="Présentation">Présentation</a></li>
+      <li><a href="#photos" data-t="Photos">Photos</a></li>
+      <li><a href="#contact" data-t="Contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<header>
+  <div class="video">
+    <div>
+      
+      <iframe src="https://www.youtube-nocookie.com/embed/j-Mf2LUeNf8" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="presentation">
+    <div class="wrap about">
+      <img class="portrait" src="photos/portrait.jpg" alt="Portrait de Marvin Mariano">
+      <div>
+        <h1 style="font-size:clamp(3rem,7vw,4.6rem);margin-bottom:1rem">Marvin Mariano</h1>
+        <div class="bio">
+          <p><em class="t">Marvin Mariano</em> est amené à la poésie par la culture hip-hop, au travers de laquelle il découvre à la fois les grands auteurs et les schémas de rimes. Il entre au <em class="t">Conservatoire Royal de Mons</em> en 2005. Au fil de son parcours, il opte pour des seuls en scène orientés vers le public, avec lequel il aime créer un rapport privilégié. Dès sa sortie du Conservatoire, il crée <em class="t">Le Printemps du monde</em> de Pablo Neruda.</p>
+          <p>Il joue également dans <em class="t">Le 20 novembre</em> de Lars Norén, <em class="t">Un certain Plume</em> d'Henri Michaux, <em class="t">Ridiculum vitae</em> de Jean-Pierre Verheggen, <em class="t">Le Joueur d'échecs</em> de Stefan Zweig, <em class="t">Cyrano de Bergerac</em> d'Edmond Rostand, <em class="t">La Serva Amorosa</em> de Carlo Goldoni, ou encore, dans <em class="t">Le Bourgeois gentilhomme</em> de Molière.</p>
+          <p>Il danse dans <em class="t">Le Coq d'Or</em> de Rimski-Korsakov à <em class="t">La Monnaie</em> et au <em class="t">Teatro Real de Madrid</em>, ainsi que dans le <em class="t">Boléro</em> de Maurice Béjart, à <em class="t">Forest National</em>. Il tourne également dans divers clips et courts métrages.</p>
+          <p>Ces dernières années, il co-réalise diverses créations vidéo avec <em class="t">Robby Pepe</em>, dont le documentaire <em class="t">Meeting Mike</em>, dédiées aux boxeurs de la région du Centre, lors de la venue de <em class="t">Mike Tyson</em> à La Louvière.</p>
+          <p>Il est aujourd'hui également professeur au <em class="t">Conservatoire de La Louvière</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos">
+    <div class="wrap">
+      <h2>Photos</h2>
+      <div class="grid">
+        <img src="photos/photo-1.jpg" alt="Marvin Mariano, photo 1" loading="lazy">
+        <img src="photos/photo-2.jpg" alt="Marvin Mariano, photo 2" loading="lazy">
+        <img src="photos/photo-3.jpg" alt="Marvin Mariano, photo 3" loading="lazy">
+        <img src="photos/photo-4.jpg" alt="Marvin Mariano, photo 4" loading="lazy">
+        <div class="vid"><img src="photos/photo-5.jpg" alt="Marvin Mariano, vidéo" data-video="photos/video-5.mp4" loading="lazy"><span class="play" aria-hidden="true">&#9654;</span></div>
+        <img src="photos/photo-6.jpg" alt="Marvin Mariano, photo 6" loading="lazy">
+        <img src="photos/photo-7.jpg" alt="Marvin Mariano, photo 7" loading="lazy">
+        <img src="photos/photo-8.jpg" alt="Marvin Mariano, photo 8" loading="lazy">
+        <img src="photos/photo-9.jpg" alt="Marvin Mariano, photo 9" loading="lazy">
+        <img src="photos/photo-10.jpg" alt="Marvin Mariano, photo 10" loading="lazy">
+        <img src="photos/photo-11.jpg" alt="Marvin Mariano, photo 11" loading="lazy">
+        <img src="photos/photo-12.jpg" alt="Marvin Mariano, photo 12" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p><a href="mailto:salescansion@gmail.com">salescansion@gmail.com</a></p>
+      <p><a href="https://www.instagram.com/marvin_mariano/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Marvin Mariano</div></footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="close" aria-label="Fermer">&times;</button>
+  <button class="prev" aria-label="Photo précédente">&#8249;</button>
+  <img alt="">
+  <video controls playsinline></video>
+  <button class="next" aria-label="Photo suivante">&#8250;</button>
+</div>
+<script>
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('.grid img')),
+      lb=document.getElementById('lb'),big=lb.querySelector('img'),vid=lb.querySelector('video'),i=0,x0=null;
+  function stop(){vid.pause();vid.removeAttribute('src');vid.load();}
+  function show(n){
+    i=(n+imgs.length)%imgs.length;var v=imgs[i].getAttribute('data-video');
+    if(v){big.style.display='none';vid.style.display='block';vid.src=v;vid.play().catch(function(){});}
+    else{stop();vid.style.display='none';big.style.display='block';big.src=imgs[i].src;big.alt=imgs[i].alt;}
+  }
+  function open(n){show(n);lb.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){stop();lb.classList.remove('open');document.body.style.overflow='';}
+  imgs.forEach(function(im,k){
+    im.tabIndex=0;im.setAttribute('role','button');
+    im.addEventListener('click',function(){open(k);});
+    im.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(k);}});
+  });
+  lb.querySelector('.close').onclick=close;
+  lb.querySelector('.prev').onclick=function(){show(i-1);};
+  lb.querySelector('.next').onclick=function(){show(i+1);};
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')show(i-1);
+    if(e.key==='ArrowRight')show(i+1);
+  });
+  lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(x0===null)return;var d=e.changedTouches[0].clientX-x0;x0=null;
+    if(Math.abs(d)>50)show(d<0?i+1:i-1);
+  });
+})();
+</script>
+</body>
+</html>

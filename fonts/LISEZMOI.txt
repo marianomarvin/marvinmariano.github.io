@@ -1,0 +1,2 @@
+Placez ici le fichier de la police Bebas Kai, nomme exactement :
+BebasKai.woff2 (ideal) ou BebasKai.otf ou BebasKai.ttf
